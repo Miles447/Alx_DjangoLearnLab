@@ -1,4 +1,4 @@
-## DELETE
+# DELETE
 
 ```python
 from bookshelf.models import Book
