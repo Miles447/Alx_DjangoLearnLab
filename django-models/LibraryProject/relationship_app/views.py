@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Book
+from django.contrib.auth import login
+
 
 # Create your views here.
 def list_book(request):
