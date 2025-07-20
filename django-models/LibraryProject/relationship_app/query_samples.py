@@ -24,5 +24,5 @@ for book in Library.books.all():
 
 #query 3 : retrieve the librarian from libraries
 Library = Library.objects.get(name=library_name)
-librarian = Library.objects.get(library=library)
+librarian = Librarian.objects.get(library=library)
 print(f"\nLibrarians for {library.name}: {librarian.name}")
