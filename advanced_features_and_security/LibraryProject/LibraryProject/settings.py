@@ -135,3 +135,31 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 AUTH_USER_MODEL = 'bookshelf.CustomUser'
+
+
+
+# Redirect all non-HTTPS requests to HTTPS
+SECURE_SSL_REDIRECT = True
+# Tell browsers to only access via HTTPS for 1 year
+SECURE_HSTS_SECONDS = 31536000
+# Apply HSTS policy to all subdomains
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# Preload HSTS for browsers
+SECURE_HSTS_PRELOAD = True
+
+
+
+# Ensure cookies are sent over HTTPS only
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+
+
+# Prevent clickjacking
+X_FRAME_OPTIONS = 'DENY'
+
+# Prevent browser from guessing content types
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Enable browser's XSS filtering
+SECURE_BROWSER_XSS_FILTER = True  # Optional in modern browsers
