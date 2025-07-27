@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bookshelf',
     'relationship_app',
     'accounts',  # Ensure accounts app is included
+    'access_control',  # Ensure access_control app is included
 ]
 
 MIDDLEWARE = [

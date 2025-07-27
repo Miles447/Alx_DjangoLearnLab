@@ -21,3 +21,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 path('relationship/', include('relationship_app.urls')),
+
+
+from django.urls import include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('access_control.urls')),
+]
