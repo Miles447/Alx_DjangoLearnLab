@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
-    'rest_framework',  # Django REST framework
+    'rest_framework',
+    'rest_framework.authtoken'   # Django REST framework
 ]
 
 MIDDLEWARE = [
@@ -127,4 +128,15 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',  # for browser login
         'rest_framework.authentication.TokenAuthentication',
     ],
+}
+
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # default: only logged-in users can access
+    ]
 }

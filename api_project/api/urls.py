@@ -12,3 +12,11 @@ urlpatterns = [
     #include the router URLs for BookViewSet (all CRUD operations)
     path('', include(router.urls)),
 ]
+
+
+from rest_framework.authtoken.views import obtain_auth_token
+
+urlpatterns = [
+    path('api/', include('api.urls')),
+    path('api-token-auth/', obtain_auth_token),  # <-- Token login endpoint
+]
