@@ -5,6 +5,13 @@ from .serializers import BookSerializer
 
 # Create your views here.
 #retrieve a single book
+
+class BookListView(generics.ListAPIView):
+
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    permission_classes = [permissions.AllowAny] #allows anyone to view the list of books
+    
 class BookDetailView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
