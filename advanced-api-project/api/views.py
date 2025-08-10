@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Book
 from rest_framework import generics, permissions
 from .serializers import BookSerializer 
-
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 # Create your views here.
 #retrieve a single book
 
@@ -11,7 +11,7 @@ class BookListView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [permissions.AllowAny] #allows anyone to view the list of books
-    
+
 class BookDetailView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
