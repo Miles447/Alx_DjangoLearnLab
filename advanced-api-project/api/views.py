@@ -4,6 +4,7 @@ from rest_framework import generics, permissions, filters
 from .serializers import BookSerializer 
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, IsAdminUser
 from django_filters.rest_framework import DjangoFilterBackend
+from django_filters import rest_framework
 # Create your views here.
 #retrieve a single book
 
@@ -25,7 +26,7 @@ class BookListView(generics.ListAPIView):
     #ordering_fields
     ordering_fields = ['title', 'publication_year']
     ordering = ['title'] #default order
-    
+
 class BookDetailView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
