@@ -1,4 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form method="post">
+        {% csrf_token %}
+        <!-- form fields -->
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
+
 {% extends "base.html" %}
+
 {% block content %}
 <h2>Login</h2>
 <form method="post">
